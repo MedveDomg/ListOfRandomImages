@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">List Of Random Images</string>
+    <string name="id">ID:</string>
 </resources>
