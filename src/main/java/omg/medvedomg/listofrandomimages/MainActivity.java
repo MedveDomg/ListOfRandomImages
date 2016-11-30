@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Log.d(TAG, "images downloaded" + images.get(3).getId());
 
-                recyclerView.setAdapter(new ImageAdapter(getApplicationContext(),images));
+                recyclerView.setAdapter(new ImageAdapter(MainActivity.this,images));
             }
 
             @Override

@@ -1,6 +1,8 @@
 package omg.medvedomg.listofrandomimages.recyclerviewadapter;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.zip.Inflater;
 
+import omg.medvedomg.listofrandomimages.MainActivity;
 import omg.medvedomg.listofrandomimages.R;
 import omg.medvedomg.listofrandomimages.model.Image;
 
@@ -53,6 +56,31 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                 .load(images.get(position).getUrl().toString())
                 .fit()
                 .into(holder.imageView);
+        holder.imageView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context)
+                        .setMessage("Do you wanna download picture?")
+                        .setTitle("Download?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
+                return true;
+            }
+        });
+
         holder.textView.setText(images.get(position).getId()+"4");
 
     }
