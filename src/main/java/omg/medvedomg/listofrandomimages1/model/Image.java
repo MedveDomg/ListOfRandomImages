@@ -43,6 +43,10 @@ public class Image {
         return id;
     }
 
+    public Image getImage() {
+        return this;
+    }
+
     public static class ImageBuilder{
 
         @SerializedName("id")
