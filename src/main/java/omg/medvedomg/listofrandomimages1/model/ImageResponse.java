@@ -1,10 +1,8 @@
-package omg.medvedomg.listofrandomimages.model;
+package omg.medvedomg.listofrandomimages1.model;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
-
-import retrofit2.http.GET;
 
 /**
  * Created by medvedomg on 26.11.16.

@@ -1,20 +1,19 @@
-package omg.medvedomg.listofrandomimages;
+package omg.medvedomg.listofrandomimages1.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
-import omg.medvedomg.listofrandomimages.model.Image;
-import omg.medvedomg.listofrandomimages.model.ImageResponse;
-import omg.medvedomg.listofrandomimages.recyclerviewadapter.ImageAdapter;
-import omg.medvedomg.listofrandomimages.rest.ApiClient;
-import omg.medvedomg.listofrandomimages.rest.ApiInterface;
+import omg.medvedomg.listofrandomimages1.R;
+import omg.medvedomg.listofrandomimages1.model.Image;
+import omg.medvedomg.listofrandomimages1.model.ImageResponse;
+import omg.medvedomg.listofrandomimages1.recyclerviewadapter.ImageAdapter;
+import omg.medvedomg.listofrandomimages1.rest.ApiClient;
+import omg.medvedomg.listofrandomimages1.rest.ApiInterface;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<ImageResponse>() {
             @Override
             public void onResponse(Call<ImageResponse> call, Response<ImageResponse> response) {
-                Log.d("TAG", "in onResponse");
+                Log.d("TAG", "in onResponse ");
                 int statusCode = response.code();
                 Log.d("TAG", "response.code()" + response.code());
 

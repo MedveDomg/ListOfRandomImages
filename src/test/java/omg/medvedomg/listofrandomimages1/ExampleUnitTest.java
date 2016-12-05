@@ -1,4 +1,4 @@
-package omg.medvedomg.listofrandomimages;
+package omg.medvedomg.listofrandomimages1;
 
 import org.junit.Test;
 

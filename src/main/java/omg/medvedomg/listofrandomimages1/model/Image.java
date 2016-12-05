@@ -1,4 +1,4 @@
-package omg.medvedomg.listofrandomimages.model;
+package omg.medvedomg.listofrandomimages1.model;
 
 import com.google.gson.annotations.SerializedName;
 

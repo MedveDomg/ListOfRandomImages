@@ -1,6 +1,6 @@
-package omg.medvedomg.listofrandomimages.rest;
+package omg.medvedomg.listofrandomimages1.rest;
 
-import omg.medvedomg.listofrandomimages.model.ImageResponse;
+import omg.medvedomg.listofrandomimages1.model.ImageResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 

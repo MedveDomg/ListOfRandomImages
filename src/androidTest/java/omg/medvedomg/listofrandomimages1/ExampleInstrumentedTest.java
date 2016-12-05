@@ -1,4 +1,4 @@
-package omg.medvedomg.listofrandomimages;
+package omg.medvedomg.listofrandomimages1;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
