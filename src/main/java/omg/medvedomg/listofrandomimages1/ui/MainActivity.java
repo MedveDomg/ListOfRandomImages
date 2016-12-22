@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 
 import com.squareup.picasso.Picasso;
@@ -20,6 +21,7 @@ import omg.medvedomg.listofrandomimages1.R;
 import omg.medvedomg.listofrandomimages1.model.Image;
 import omg.medvedomg.listofrandomimages1.model.ImageResponse;
 import omg.medvedomg.listofrandomimages1.recyclerviewadapter.ImageAdapter;
+import omg.medvedomg.listofrandomimages1.recyclerviewadapter.SimpleItemTouchHelperCallback;
 import omg.medvedomg.listofrandomimages1.rest.ApiClient;
 import omg.medvedomg.listofrandomimages1.rest.ApiInterface;
 import retrofit2.Call;
@@ -77,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
+
+
         downloadImages(apiService, recyclerView);
 
     }
@@ -93,9 +97,13 @@ public class MainActivity extends AppCompatActivity {
                 ArrayList<Image> images = response.body().getImageList();
 
                 Log.d(TAG, "images downloaded" + images.get(3).getId());
-
-                recyclerView.setAdapter(new ImageAdapter(MainActivity.this,images));
+                ImageAdapter adapter = new ImageAdapter(MainActivity.this, images);
+                recyclerView.setAdapter(adapter);
                 mSwipeRefreshLayout.setRefreshing(false);
+                ItemTouchHelper.Callback callback =
+                        new SimpleItemTouchHelperCallback(adapter);
+                ItemTouchHelper touchHelper = new ItemTouchHelper(callback);
+                touchHelper.attachToRecyclerView(recyclerView);
             }
 
             @Override
@@ -104,4 +112,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+
+        @Override
+        public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
+            //Remove swiped item from list and notify the RecyclerView
+
+        }
+    };
+
 }

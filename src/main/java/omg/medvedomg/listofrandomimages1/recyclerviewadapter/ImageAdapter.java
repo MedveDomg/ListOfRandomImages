@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import omg.medvedomg.listofrandomimages1.R;
 import omg.medvedomg.listofrandomimages1.model.Image;
@@ -31,7 +32,7 @@ import omg.medvedomg.listofrandomimages1.services.DownloadService;
  * Created by medvedomg on 26.11.16.
  */
 
-public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder>{
+public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> implements ItemTouchHelperAdapter{
 
     ArrayList<Image> images;
 
@@ -49,6 +50,27 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     public ImageAdapter(Context context, ArrayList imageList) {
         images = imageList;
         this.context = context;
+    }
+
+    @Override
+    public boolean onItemMove(int fromPosition, int toPosition) {
+        if (fromPosition < toPosition) {
+            for (int i = fromPosition; i < toPosition; i++) {
+                Collections.swap(images, i, i + 1);
+            }
+        } else {
+            for (int i = fromPosition; i > toPosition; i--) {
+                Collections.swap(images, i, i - 1);
+            }
+        }
+        notifyItemMoved(fromPosition, toPosition);
+        return true;
+    }
+
+    @Override
+    public void onItemDismiss(int position) {
+        images.remove(position);
+        notifyItemRemoved(position);
     }
 
     public static class ImageViewHolder extends RecyclerView.ViewHolder {

@@ -40,4 +40,6 @@ public class DialogRandomImageFragment extends DialogFragment {
         return view;
     }
 
+
+
 }
