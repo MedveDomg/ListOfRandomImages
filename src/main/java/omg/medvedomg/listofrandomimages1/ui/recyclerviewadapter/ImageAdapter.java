@@ -1,4 +1,4 @@
-package omg.medvedomg.listofrandomimages1.recyclerviewadapter;
+package omg.medvedomg.listofrandomimages1.ui.recyclerviewadapter;
 
 import android.app.Activity;
 import android.app.Notification;
@@ -25,14 +25,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import omg.medvedomg.listofrandomimages1.R;
-import omg.medvedomg.listofrandomimages1.model.Image;
+import omg.medvedomg.listofrandomimages1.data.model.Image;
 import omg.medvedomg.listofrandomimages1.services.DownloadService;
 
 /**
  * Created by medvedomg on 26.11.16.
  */
 
-public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> implements ItemTouchHelperAdapter{
+public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> implements ItemTouchHelperAdapter {
 
     ArrayList<Image> images;
 

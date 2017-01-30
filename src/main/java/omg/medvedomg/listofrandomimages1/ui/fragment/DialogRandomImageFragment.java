@@ -1,4 +1,4 @@
-package omg.medvedomg.listofrandomimages1.ui;
+package omg.medvedomg.listofrandomimages1.ui.fragment;
 
 
 import android.os.Bundle;
@@ -27,7 +27,6 @@ public class DialogRandomImageFragment extends DialogFragment {
     }
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -39,7 +38,6 @@ public class DialogRandomImageFragment extends DialogFragment {
                 .into(randomImageView);
         return view;
     }
-
 
 
 }

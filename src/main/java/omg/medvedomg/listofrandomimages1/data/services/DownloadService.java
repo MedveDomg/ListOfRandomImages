@@ -1,4 +1,4 @@
-package omg.medvedomg.listofrandomimages1.services;
+package omg.medvedomg.listofrandomimages1.data.services;
 
 import android.app.IntentService;
 import android.content.Context;

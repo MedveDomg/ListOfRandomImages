@@ -1,4 +1,4 @@
-package omg.medvedomg.listofrandomimages1.recyclerviewadapter;
+package omg.medvedomg.listofrandomimages1.ui.recyclerviewadapter;
 
 /**
  * Created by medvedomg on 22.12.16.

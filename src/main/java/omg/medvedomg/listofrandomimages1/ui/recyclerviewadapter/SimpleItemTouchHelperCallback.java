@@ -1,4 +1,4 @@
-package omg.medvedomg.listofrandomimages1.recyclerviewadapter;
+package omg.medvedomg.listofrandomimages1.ui.recyclerviewadapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
